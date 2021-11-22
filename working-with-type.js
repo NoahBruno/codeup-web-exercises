@@ -65,26 +65,36 @@ console.log(!!1)
 
 console.log(!!-1)
 
-console.log(!!0.1)
+console.log(!!0.1);
 
-console.log(!!"hello")
+console.log(!!"hello");
 
-console.log(!!"")
+console.log(!!"");
 
-console.log(!!'')
+console.log(!!'');
 
-console.log(!!"false")
+console.log(!!"false");
 
-console.log(!!"0")
+console.log(!!"0");
 
 let sample = "Hello Codeup";
-console.log(sample.length)
-console.log(sample.toUpperCase())
-console.log(sample.toLowerCase())
-console.log(sample + " students")
-console.log(sample.indexOf('c'))
-console.log(sample.indexOf('C'))
-console.log(sample.substring(6,12))
+console.log(sample.length);
+console.log(sample.toUpperCase());
+console.log(sample.toLowerCase());
+sample += " Students"
+console.log(sample)
+sample = sample.replace("Students", "Class")
+console.log(sample)
+console.log(sample.indexOf('c'));
+console.log(sample.indexOf('C'));
+console.log(sample.substring(6,12));
 
-let sample2 = "Hello CodeUp students";
-console.log(sample2.replace(" students"," class"))
+
+var movies = "3";
+var days = "9";
+console.log(movies * days);
+
+var google= 400 * 6;
+var amazon = 380 * 4;
+var facebook= 350 * 10;
+console.log(google + amazon + facebook);
