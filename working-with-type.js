@@ -76,3 +76,15 @@ console.log(!!'')
 console.log(!!"false")
 
 console.log(!!"0")
+
+let sample = "Hello Codeup";
+console.log(sample.length)
+console.log(sample.toUpperCase())
+console.log(sample.toLowerCase())
+console.log(sample + " students")
+console.log(sample.indexOf('c'))
+console.log(sample.indexOf('C'))
+console.log(sample.substring(6,12))
+
+let sample2 = "Hello CodeUp students";
+console.log(sample2.replace(" students"," class"))
