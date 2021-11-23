@@ -90,8 +90,8 @@ console.log(sample.indexOf('C'));
 console.log(sample.substring(6,12));
 
 
-var movies = "3";
-var days = "9";
+var movies = 3;
+var days = 9;
 console.log(movies * days);
 
 var google= 400 * 6;
@@ -111,8 +111,7 @@ console.log(premiumMember || (boughtMoreThanTwo && offerNotExpired));
 var username = 'codeup';
 var password = 'notastrongpassword';
 console.log(password.length > 5);
-console.log(password == username);
+console.log(password.replace(username, "") == password);
 console.log(username.length < 20);
 
-console.log(username !== username.trim());
-console.log(password !== password.trim());
+console.log(username == username.trim()) && (password == password.trim());
