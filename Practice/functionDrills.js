@@ -66,16 +66,19 @@ console.log(isMultipleOf())
 // - Make a function named `isConsonant(letter)`
 // - Make a function named `isCapital(letter)`
 // - Make a function named `isLowerCase(letter)`
-// - Make a function named `hasLowerCase(string)` that returns if a string has any
+// - Make a function named `hasLowerCase(string)` that returns false if a string has any
 // lower cased letter
 function isLowerCase()
 {
-    return str == str.toLowerCase() || str != str.toUpperCase();
+    return (str == str.toUpperCase());
 }
-var str = "LoLLLL"
+var str = "lol"
 console.log(isLowerCase())
-// - Make a function named `isSpace(letter)` that returns if a character is a space
+// - Make a function named `isSpace(letter)` that returns true if a character is a space
 // character
+function isSpace(){
+
+}
 
 // - Make a function named `isZero(number)`
 // - Make a function named `notZero(input)` that returns true if the input is not
