@@ -73,24 +73,25 @@ switch(randomColor){
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-function analyzeColor(whatColor) {
-    if (whatColor == "green") {
-        console.log("Green is my favorite color!")
-    }
-    else if (whatColor == "red")
-    {
-        console.log("Red is ight I guess")
-    }
-    else
-    {
-        console.log(whatColor + "? What color is that?")
-    }
-}
-console.log(analyzeColor())
+// let C = prompt("What color do you like?");
+// alert(analyzeColor())
+//
+// function analyzeColor() {
+//     if (C === "green") {
+//         return("Green is my favorite color!")
+//     }
+//     else if (C === "red")
+//     {
+//         return("Red is ight I guess")
+//     }
+//     else
+//     {
+//         return(C + "? What color is that?")
+//     }
+// }
+// analyzeColor(C)
 
-var whatColor= prompt ("What color do you like?")
-console.log(whatColor)
-alert(analyzeColor())
+
 
 /* ########################################################################## */
 
@@ -113,6 +114,28 @@ alert(analyzeColor())
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+
+function calculateTotal(L, D){
+    if (L === 0) {
+        console.log(D)
+    }
+    else if (L === 1) {
+        console.log(D-(D * .1))
+    }
+    else if (L === 2){
+        console.log(D-(D * .25))
+    }
+    else if (L === 3){
+        console.log(D-(D * .35))
+    }
+    else if (L === 4){
+        console.log(D-(D * .50))
+    }
+    else {
+        console.log(D - D)
+    }
+}
+calculateTotal(4,100)
 
 /**
  * TODO:
