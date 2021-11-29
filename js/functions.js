@@ -8,7 +8,7 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-function sayHello(name){
+function sayHello(){
     return "hello " + name
 }
 let name= "Noah"
@@ -21,9 +21,9 @@ console.log(sayHello(name))
  *
  * console.log 'helloMessage' to check your work
  */
-sayHello("name")
-var helloMessage= sayHello
-console.log(helloMessage(name))
+// sayHello("name")
+// var helloMessage= sayHello()
+// console.log(sayhello(helloMessage))
 
 /**
  * TODO:
@@ -62,7 +62,7 @@ function isTwo(){
         if (random == 2){
             console.log("true")
     }else{
-        console.log(false)
+        console.log("false")
     }
 }
 console.log(isTwo())
@@ -78,7 +78,7 @@ console.log(isTwo())
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calcuateTip(tipPercentage, billTotal){
-    return (tipPercentage * billTotal)
+    return ((tipPercentage/100) * billTotal)
 }
 var tipPercentage= 0.20
 var billTotal = 100
@@ -91,10 +91,10 @@ console.log(calcuateTip(tipPercentage,billTotal))
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-var tipAmount= prompt("How much do you want to tip?")
-console.log(tipAmount)
-alert(calcuateTip(tipAmount,billTotal))
 
+let x= prompt ("how much was your bill total?")
+let y= prompt ("What percent would you like to tip?")
+alert("Tip this much! $" + calcuateTip(x,y))
 
 
 
