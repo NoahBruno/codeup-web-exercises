@@ -55,7 +55,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-switch(randomColor){
+switch (randomColor) {
     case "green":
         console.log("Green is my favorite color!");
         break;
@@ -92,7 +92,6 @@ switch(randomColor){
 // analyzeColor(C)
 
 
-
 /* ########################################################################## */
 
 /**
@@ -115,27 +114,23 @@ switch(randomColor){
  * return value.
  */
 
-function calculateTotal(L, D){
+function calculateTotal(L, D) {
     if (L === 0) {
-        console.log(D)
-    }
-    else if (L === 1) {
-        console.log(D-(D * .1))
-    }
-    else if (L === 2){
-        console.log(D-(D * .25))
-    }
-    else if (L === 3){
-        console.log(D-(D * .35))
-    }
-    else if (L === 4){
-        console.log(D-(D * .50))
-    }
-    else {
-        console.log(D - D)
+        return (D)
+    } else if (L === 1) {
+        return (D - (D * .1))
+    } else if (L === 2) {
+        return (D - (D * .25))
+    } else if (L === 3) {
+        return (D - (D * .35))
+    } else if (L === 4) {
+        return (D - (D * .50))
+    } else {
+        return (D - D)
     }
 }
-calculateTotal(4,100)
+
+calculateTotal(4, 100)
 
 /**
  * TODO:
@@ -147,6 +142,8 @@ calculateTotal(4,100)
  */
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
+// var Bill = prompt ("What was your total bill total?")
+// alert(calculateTotal(luckyNumber,Bill))
 
 /**
  * TODO:
@@ -166,3 +163,36 @@ calculateTotal(4,100)
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+var Yes = confirm("would you like to enter a number?")
+var userInput = prompt("What number would you like to enter?")
+console.log(userInput);
+
+function ifEvenOrOdd(Number) {
+    if (Number % 2 === 0) {
+        return ("Its even!")
+    } else if (Number % 2 === 1)
+    {
+        return ("Its odd!")
+    } else{
+        return ("thats not a number!")
+    }
+}
+
+alert(ifEvenOrOdd(userInput))
+
+function numPlus(Number){
+    return (parseInt(Number) + 100)
+}
+alert(numPlus(userInput) + " That\'s your number plus 100")
+
+function negativeOrPositive(Number){
+    if (Number < 0){
+        return ("I'm a negative number!")
+    }else if (Number > 0){
+        return("I'm a positive number!")
+    }else{
+        return("I'm a Zero!")
+    }
+}
+alert(negativeOrPositive(userInput))
+
