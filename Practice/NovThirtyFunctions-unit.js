@@ -9,27 +9,64 @@ var scoreThree = 300
 var scoreFour = 215
 var scoreFive = 150
 
-function bowling(bowling){
-    return((scoreOne + scoreTwo + scoreThree)/ 3)
+function bowling(bowling) {
+    return ((scoreOne + scoreTwo + scoreThree) / 3)
 }
 
 console.log(bowling())
 
-function bestScore(){
-    return (Math.max(scoreOne,scoreTwo,scoreThree,scoreFour,scoreFive))
+function bestScore() {
+    return (Math.max(scoreOne, scoreTwo, scoreThree, scoreFour, scoreFive))
 
 }
+
 console.log(bestScore())
 
-function divisable(x){
-    return (x % 3 === 0 || x % 5 === 0 )
+function divisable(x) {
+    return (x % 3 === 0 || x % 5 === 0)
 }
+
 console.log(divisable(bestScore()))
 
-var n =“ThEbEsTbOwLiNgPlAcEever”
+var n ='ThEbEsTbOwLiNgPlAcEever'
 
-function bowlingName(){
+function bowlingName() {
     return (n.toLowerCase())
 
 }
-console.log(bowlingName())
+
+console.log(bowlingName(n))
+
+let score = 109
+let name = "bowlingisfun"
+let bowlingisfun = true
+let players = ["tom", "jerry","garfield"]
+
+function whatIsIt(x){
+    return(typeof(x))
+}
+
+console.log(whatIsIt(score))
+console.log(whatIsIt(name))
+console.log(whatIsIt(bowlingisfun))
+console.log(whatIsIt(players))
+
+var averageScore = bowling()
+var highestScore = bestScore()
+var zero = divisable()
+var bestPlace = bowlingName()
+var type = whatIsIt()
+
+function allOfThese(){
+
+    console.log(averageScore)
+    console.log(highestScore)
+    console.log(zero)
+    console.log(bestPlace)
+    console.log(type)
+}
+allOfThese()
+
+
+
+
