@@ -28,7 +28,7 @@ function divisable(x) {
 
 console.log(divisable(bestScore()))
 
-var n ='ThEbEsTbOwLiNgPlAcEever'
+var n = 'ThEbEsTbOwLiNgPlAcEever'
 
 function bowlingName() {
     return (n.toLowerCase())
@@ -40,10 +40,10 @@ console.log(bowlingName(n))
 let score = 109
 let name = "bowlingisfun"
 let bowlingisfun = true
-let players = ["tom", "jerry","garfield"]
+let players = ["tom", "jerry", "garfield"]
 
-function whatIsIt(x){
-    return(typeof(x))
+function whatIsIt(x) {
+    return (typeof (x))
 }
 
 console.log(whatIsIt(score))
@@ -57,7 +57,7 @@ var zero = divisable()
 var bestPlace = bowlingName()
 var type = whatIsIt()
 
-function allOfThese(){
+function allOfThese() {
 
     console.log(averageScore)
     console.log(highestScore)
@@ -65,7 +65,25 @@ function allOfThese(){
     console.log(bestPlace)
     console.log(type)
 }
+
 allOfThese()
+
+function myFunction(firstName, lastName) {
+    return (firstName + lastName)
+}
+
+console.log(myFunction("Noah", "bruno"))
+
+
+function thatsNotMyName(name) {
+    if (name === "Laura") {
+        return ("that's me!, I'm " + "name")
+    } else {
+        return "that's not my name"
+    }
+}
+
+console.log(thatsNotMyName("Laura"))
 
 
 
