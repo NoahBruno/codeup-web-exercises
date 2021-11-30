@@ -32,7 +32,6 @@ let num= 5
 console.log(isFive(num))
 // - Make a function named `isMultipleOfFive(input)`
 function isMultipleOfFive(input){
-
 }
 // - Make a function named `isThree(input)`
 function isThree(input){
