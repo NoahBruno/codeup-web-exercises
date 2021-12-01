@@ -3,10 +3,17 @@
 // ### IF / ELSE IF / ELSE
 //
 // #### Create a function called `getToDestination` which will help determine how a person can get to their destination!
-function getToDestination(age, isInsured, has ){
-
+function getToDestination(age, isInsured, hasCar, canGetRideshare ){
+    if (age >= 16 && isInsured === true && hasCar === true ) {
+        return ("Can use own vehicle")
+    }
+    else if ((age <= 16 && isInsured === false) === true || hasCar === true || canGetRideshare === true) {
+        return ("can call a rideshare")
+    }else{
+        return ("Call a friend!")
+    }
 }
-
+console.log(getToDestination(15,true, true, false))
 //     It will accept 4 arguments and the parameter names are:
 //
 //     - age - the age of the rider

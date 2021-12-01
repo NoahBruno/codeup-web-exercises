@@ -5,11 +5,11 @@
 // Write a function that executes all of the above functions
 var scoreOne = 220
 var scoreTwo = 240
-var scoreThree = 300
+var scoreThree = 299
 var scoreFour = 215
 var scoreFive = 150
 
-function bowling(bowling) {
+function bowling() {
     return ((scoreOne + scoreTwo + scoreThree) / 3)
 }
 
@@ -55,7 +55,7 @@ var averageScore = bowling()
 var highestScore = bestScore()
 var zero = divisable()
 var bestPlace = bowlingName()
-var type = whatIsIt()
+var type = whatIsIt(score)
 
 function allOfThese() {
 
@@ -76,10 +76,10 @@ console.log(myFunction("Noah", "bruno"))
 
 
 function thatsNotMyName(name) {
-    if (name === "Laura") {
+    if (name === "Laur") {
         return ("that's me!, I'm " + "name")
     } else {
-        return "that's not my name"
+        return ("that's not my name")
     }
 }
 

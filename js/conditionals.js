@@ -164,6 +164,10 @@ calculateTotal(4, 100)
  * HINT: The way we prompt for a value could be improved
  */
 var Yes = confirm("would you like to enter a number?")
+// function willI(){
+//     if (Yes === )
+// }
+
 var userInput = prompt("What number would you like to enter?")
 console.log(userInput);
 
