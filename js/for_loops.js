@@ -7,5 +7,6 @@ for (var i = 1; i <= 10; i++) {
 }
 
 
-var random = Math.floor((Math.random() * 3) + 1);
+var random = Math.floor((Math.random() * (200 - 20) + 20));
 console.log(random)
+
