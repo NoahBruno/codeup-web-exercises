@@ -34,12 +34,22 @@ for (var i = 1 ; i <= 10 ; i++)
 }
 
 
-
-for (var i = 105; i <= 5, i-=5; ){
-
-    console.log(i)
-
+var s = "";
+for(var i = 1; i < 10; i ++) {
+    for (var c = 0; c < i; c++) {
+        s += i + " ";
+    }
+    s += "\n";
 }
+console.log(s);
+
+
+
+// for (var i = 105; i <= 5, i-=5; ){
+//
+//     console.log(i)
+//
+// }
 
 
 
