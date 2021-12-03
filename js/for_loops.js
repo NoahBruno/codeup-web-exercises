@@ -1,21 +1,21 @@
-function showMultiplicationTable(){
+function showMultiplicationTable(x){
 
-}
-var num = 7
 for (var i = 1; i <= 10; i++) {
-    console.log("%d * %d = %d \n", num, i, num * i);
+    var answer = (x * i)
+    console.log(x + "x" + i + "=" + answer);
 }
-// var r = Math.floor(Math.random() * (200 - 20)) + 20;
+}
+showMultiplicationTable(7)
+
+
+// var r = Math.floor(Math.random() * 180) + 20;
 //
-// for (var i =1; i < 11; i++) {
+// for (var i =0; i < 10; i++) {
 //     if (r % 2 === 0 ){
 //         console.log("Hi I'm an even number " + r )
 //
-//     }else if(r % 2 !==0){
-//         console.log("Eww I'm Odd " + r )
-//
-//     }else{
-//         console.log("done")
+//     }else {
+//         console.log("Eww I'm Odd " + r)
 //     }
 //
 // }
@@ -45,11 +45,11 @@ console.log(s);
 
 
 
-// for (var i = 105; i <= 5, i-=5; ){
-//
-//     console.log(i)
-//
-// }
+for (var i = 105; i <= 5, i-=5; ){
+
+    console.log(i)
+
+}
 
 
 

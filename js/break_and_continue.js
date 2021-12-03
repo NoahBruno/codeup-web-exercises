@@ -1,5 +1,5 @@
-// var oddNumber = prompt("Type in an odd number between 1 and 50");
-// var tryAgain = prompt ("Let's try that again! Type in an odd number between 1 and 50")
+// var oddNumber = Number(prompt("Type in an odd number between 1 and 50"));
+// var tryAgain = Number(prompt("Let's try that again! Type in an odd number between 1 and 50"))
 
 
 // var P = prompt("Type in an odd number between 1 and 50");
