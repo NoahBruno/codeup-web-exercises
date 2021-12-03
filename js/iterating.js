@@ -47,10 +47,15 @@ names.forEach(function(name) {
 //      * - last: returns the last item in the array
 //      *
 //      * Example:
-var first=([1, 2, 3, 4, 5]) // returns 1
-var second= ([1, 2, 3, 4, 5]) // returns 2
-var last = ([1, 2, 3, 4, 5]) // return 5
+
+    var first = ([1, 2, 3, 4, 5]) // returns 1
+    var second = ([1, 2, 3, 4, 5]) // returns 2
+    var last = ([1, 2, 3, 4, 5]) // return 5
+
 //      */
-someArray.forEach(function(first,[]))
+console.log("I'm first " + first[0])
+console.log("I'm second " + second[1])
+console.log("I'm last  " + last [4])
+
 //
 // })();
