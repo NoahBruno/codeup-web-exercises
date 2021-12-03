@@ -36,7 +36,7 @@ for (var i = 0; i < names.length; i++){
 //      * Refactor your above code to use a `forEach` loop
 //      */
 names.forEach(function(name) {
-    console.log("Hi my name is chika chika " + "slim " + name);
+    console.log("Hi my name is chika chika slim " + name);
 });
 //     /**
 //      * TODO:
@@ -47,15 +47,33 @@ names.forEach(function(name) {
 //      * - last: returns the last item in the array
 //      *
 //      * Example:
+var name = ["noah", "john", "bruno", "dede"]
 
-    var first = ([1, 2, 3, 4, 5]) // returns 1
-    var second = ([1, 2, 3, 4, 5]) // returns 2
-    var last = ([1, 2, 3, 4, 5]) // return 5
+function first(array){
+    return (name[0])
+}
 
-//      */
-console.log("I'm first " + first[0])
-console.log("I'm second " + second[1])
-console.log("I'm last  " + last [4])
+function second(array){
+    return (name[1])
+}
+
+function last(array){
+    let Li = array.length - 1;
+    return (name[Li])
+}
+
+console.log(first(name))
+console.log(second(name))
+console.log(last(name))
+
+//     var first = ([1, 2, 3, 4, 5]) // returns 1
+//     var second = ([1, 2, 3, 4, 5]) // returns 2
+//     var last = ([1, 2, 3, 4, 5]) // return 5
+//
+// //      */
+// console.log("I'm first " + first[0])
+// console.log("I'm second " + second[1])
+// console.log("I'm last  " + last [4])
 
 //
 // })();
