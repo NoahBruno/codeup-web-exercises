@@ -97,17 +97,20 @@ cars.forEach(function(car) {
         console.log(feature);
     });
 });
+//
+// "use strict";
+//
+// var car = {};
+// car.make = "Toyota";
+// car.model = "Camry";
+//
+// // create a logMakeModel method on the car object
+// car.logMakeModel = function () {
+//     console.log("Car make/model is: " + this.make + " " + this.model);
+// };
+//
+// // log the make/model
+// car.logMakeModel();
 
-"use strict";
+let samsDogs= ["blue", "luna", "scamp"];
 
-var car = {};
-car.make = "Toyota";
-car.model = "Camry";
-
-// create a logMakeModel method on the car object
-car.logMakeModel = function () {
-    console.log("Car make/model is: " + this.make + " " + this.model);
-};
-
-// log the make/model
-car.logMakeModel();

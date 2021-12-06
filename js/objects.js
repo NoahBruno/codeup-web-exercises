@@ -46,8 +46,6 @@ var person= {}
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-    if x>200
-        console.log(x * .12)
 
     var shoppers = [
         {name: 'Cameron', amount: 180},
@@ -55,7 +53,19 @@ var person= {}
         {name: 'George', amount: 320}
     ];
 
+    shoppers.forEach(function (m) {
+        if (m.amount > 200) {
+            console.log("you got a discount! " + m.name)
+            console.log(m.amount + "- 12%")
+            console.log(m.amount - (m.amount * .12));
+        } else {
+            console.log("no dicount for you " + m.name)
+            console.log(m.amount);
+        }
+    });
 
+
+// console.log(name, amount before, discount, amount after)
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -69,6 +79,20 @@ var person= {}
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books= [
+        {title: "The Salmon of Doubt", author:{firstName: "ted", lastName: "fred"}},
+        {title: "Douglas", author: {firstName: "nancy", lastName: "drew"}},
+        {title: "Adams",author: {firstName: "ronald", lastName: "mcdonald"}},
+        {title: "blades of glory", author: {firstName: "will", lastName: "ferrel"}},
+        {title: "freebird",author: {firstName: "ozzy", lastName: "osbourne"}},
+    ];
+
+    console.log(books[3].title)
+    console.log(books[4].author.firstName)
+    console.log(books[4].author.lastName)
+
+
+
 
     /**
      * TODO:
@@ -94,7 +118,10 @@ var person= {}
      *      ---
      *      ...
      */
-
+     books.forEach(function(book){
+         console.log()
+         console.log(book.title)
+});
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
