@@ -26,5 +26,6 @@
     var planetsStrings = "<br>Mercury<br>Venus<br>Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranus<br>Neptune";
     console.log(planetsStrings)
     console.log(planetsArray.join("<br>"))
-
+    //way to append to HTMl document
+//document.getElementsByTagName('body')[0].innerHTML += YourString
 })();
