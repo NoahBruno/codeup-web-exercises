@@ -53,14 +53,14 @@ var person= {}
         {name: 'George', amount: 320}
     ];
 
-    shoppers.forEach(function (m) {
-        if (m.amount > 200) {
-            console.log("you got a discount! " + m.name)
-            console.log(m.amount + "- 12%")
-            console.log(m.amount - (m.amount * .12));
+    shoppers.forEach(function (shopper) {
+        if (shopper.amount > 200) {
+            console.log("you got a discount! " + shopper.name)
+            console.log(shopper.amount + "- 12%")
+            console.log(shopper.amount - (shopper.amount * .12));
         } else {
-            console.log("no dicount for you " + m.name)
-            console.log(m.amount);
+            console.log("no dicount for you " + shopper.name)
+            console.log(shopper.amount);
         }
     });
 
@@ -118,10 +118,16 @@ var person= {}
      *      ---
      *      ...
      */
+     var bookNumber= books.indexOf()
      books.forEach(function(book){
-         console.log()
+         console.log("Book #" + ++bookNumber )
          console.log(book.title)
-});
+         console.log(book.author.firstName + " " + book.author.lastName)
+         });
+
+
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -132,5 +138,13 @@ var person= {}
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    books.createBook= function (title, author) {
+        console.log(this.title, this.author)
+
+    }
+    books.createBook()
+
+
+
 
 })();
