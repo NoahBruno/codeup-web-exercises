@@ -28,7 +28,7 @@ var person= {}
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
     person.sayHello= function(){
-        return("Hello " + person.firstname + " " + person.lastname)
+        return("Hello " + this.firstname + " " + this.lastname)
     }
 
     console.log(person.sayHello())
@@ -120,9 +120,10 @@ var person= {}
      */
      var bookNumber= books.indexOf()
      books.forEach(function(book){
-         console.log("Book #" + ++bookNumber )
-         console.log(book.title)
-         console.log(book.author.firstName + " " + book.author.lastName)
+         // console.log("Book #" + ++bookNumber ) OR (index + 1)
+         // console.log(book.title)
+         // console.log(book.author.firstName + " " + book.author.lastName)
+         console.log(`Book # ${++bookNumber} ${book.title}\n Author: ${book.author.firstName} ${book.author.lastName}`)
          });
 
 
@@ -138,11 +139,33 @@ var person= {}
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    books.createBook= function (title, author) {
-        console.log(this.title, this.author)
+    // books.forEach(function (createBook) {
+    //     console.log(createBook.title)
+    //     console.log(createBook.author)
+    //
+    // });
+    function createBook(bookTitle, Afirst,  Alast) {
+        return {
+            title: bookTitle,
+            author: {
+                first: Afirst,
+                last: Alast
+            },
+            showBookInfo: function () {
+                console.log(this.title);
+                console.log(this.author.first + " " + this.author.last);
 
+
+            }
+        }
     }
-    books.createBook()
+    const newBook = createBook("a","b","c")
+
+    newBook.showBookInfo()
+
+
+
+
 
 
 
