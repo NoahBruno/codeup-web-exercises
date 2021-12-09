@@ -6,13 +6,24 @@ comment
 #FirstTitle{
     background-image: url(https://c.tenor.com/jDxcgLJt0MQAAAAC/vegito-final.gif);
     background-repeat: no-repeat;
-    padding:80px 80px 80px;
-    background-position: center;
+    padding:10px 95px 200px 100px;
+    box-shadow: 20px 20px 10px 0 rgba(0,0,0,0.75);
+
+}
+.center {
+    display: block;
+    margin-left: 475px;
+    margin-right: auto;
+    width: 20%;
 }
 .fancy-header {
     color:darkred;
     text-decoration: underline;
     text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -900%);
 }
 h2 {
     text-decoration: underline;
