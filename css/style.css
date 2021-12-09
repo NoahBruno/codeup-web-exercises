@@ -10,7 +10,7 @@ comment
     background-position: center;
 }
 .fancy-header {
-
+    color:darkred;
     text-decoration: underline;
     text-align: center;
 }
