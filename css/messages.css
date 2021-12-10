@@ -14,24 +14,24 @@ div{
 
 .message-info{
     background-color: rgba(108, 161, 217, 0.6);
-    color: #3695a6;
+    color: rgb(7, 114, 134);
 }
 
 .message-success{
-    background-color: rgba(48, 246, 4, 0.6);
-    color: rgba(71, 157, 65, 0.71);
+    background-color: rgba(48, 246, 4, 0.4);
+    color: rgb(71, 157, 65);
 
 }
 
 .message-warning{
-    background-color: rgb(255, 233, 0);
-    color: #cbb33c;
+    background-color: rgba(255, 228, 0, 0.6);
+    color: #947c00;
 
 }
 
 .message-error{
-    background-color: rgba(246, 4, 4, 0.6);
-    color: #f64545;
+    background-color: rgba(246, 4, 4,0.5);
+    color: #911c1c;
 
 }
 
