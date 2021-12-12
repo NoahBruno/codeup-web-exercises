@@ -3,8 +3,18 @@ multi
 line
 comment
 */
+#banana{
+    background-image: url("https://c.tenor.com/vAujXa-no4cAAAAM/mr-banana-yeah.gif");
+    float:left;
+    background-repeat: no-repeat;
+    width:100px;
+    height: 100px;
+
+
+}
+
 #FirstTitle{
-    background-image: url(https://c.tenor.com/jDxcgLJt0MQAAAAC/vegito-final.gif);
+    background-image: url("https://c.tenor.com/jDxcgLJt0MQAAAAC/vegito-final.gif");
     background-repeat: no-repeat;
     padding:10px 95px 200px 100px;
     box-shadow: 20px 20px 10px 0 rgba(0,0,0,0.75);
