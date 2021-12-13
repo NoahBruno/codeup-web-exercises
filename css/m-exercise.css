@@ -2,35 +2,44 @@
     width: 1000px;
     height: 1000px;
     border: 10px solid green;
-    background: linear-gradient(0.25turn, black, #ebf8e1, black);
+    background: linear-gradient(0.25turn, black, grey, black);
 }
 
 #container{
-    width:800px;
+    width:200px;
     height:200px;
     border:2px solid black;
     margin: 75px 100px 10px 100px;
 }
 
 #container2{
-    width:800px;
+    width:200px;
     height:200px;
     border:2px solid black;
     margin: 10px 100px 10px 100px;
+    position: relative;
+    left: 680px;
+    bottom: 250px;
 }
 
 #container3{
-    width:800px;
+    width:200px;
     height:200px;
     border:2px solid black;
     margin: 10px 100px 10px 100px;
+    position: relative;
+    bottom:10px;
+
 }
 
 #container4{
-    width:800px;
+    width:200px;
     height:200px;
     border:2px solid black;
     margin: 10px 100px 10px 100px;
+    position: relative;
+    bottom:10px;
+    left:680px;
 }
 
 
