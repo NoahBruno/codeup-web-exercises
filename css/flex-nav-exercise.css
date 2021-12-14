@@ -6,19 +6,32 @@ nav{
     display: flex;
     justify-content: space-between;
     background-color: #b0afaf;
+    box-sizing: border-box;
 }
 
 .nav_content{
     display: flex;
-    box-sizing: border-box;
 }
 
-.nav_content > * {
+.nav_content_side > * {
     padding:4px;
 }
 
-.nav_item{
+.nav_content > * {
+    padding:0.2px 0.2em;
+}
+
+.nav_content{
+    font-size: 3em;
+    padding:0.2em 0.2em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav_content_side{
+    display: flex;
     transition: 500ms;
+    font-family: 'Work Sans', sans-serif;
+    align-items: center;
 }
 
 .nav_item > a{
@@ -26,10 +39,19 @@ nav{
     color:black;
 }
 
+.nav_item img{
+    height:35px;
+    width:35px;
+}
+
 .nav_item:hover{
     background-color: #22D2A0;
     cursor: pointer;
     transition: 500ms;
+}
+
+a{
+    display: inline-block;
 }
 
 
