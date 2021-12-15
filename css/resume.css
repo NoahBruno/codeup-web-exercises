@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+}
+
+@keyframes colorText {
+    from{color:#cbffcd;}
+    to{color:black;}
+}
+
+.nav_header{
+    width:70%;
+    text-align: center;
+    font-size: xx-large;
+    animation-name:colorText;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    color:#cbffcd;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    font-family: 'Permanent Marker', cursive;
+}
+
+nav{
+    display: flex;
+    background-color:lightgrey;
+    height: 120px;
+    align-items: center;
+}
+
+.p1{
+    width:100%;
+    height:400px;
+    background-color: #cbffcd;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+header{
+    text-align: center;
+}
+

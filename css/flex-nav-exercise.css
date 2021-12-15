@@ -45,13 +45,62 @@ nav{
 }
 
 .nav_item:hover{
-    background-color: #22D2A0;
+    background-color: #cbffcd;
     cursor: pointer;
     transition: 500ms;
 }
 
+.nav_item a:hover{
+    color: #b0afaf;
+}
+
 a{
     display: inline-block;
+}
+
+footer{
+    background-color: #cbffcd;
+
+}
+
+.footer_content{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer_item{
+    padding:1em;
+    margin: 0.2em;
+}
+
+.footer_item > a {
+    text-decoration: none;
+    color:black;
+}
+
+.footer_item:hover{
+    background-color: #b0afaf;
+}
+.footer_item a:hover {
+    color: #cbffcd;
+}
+
+#Enter\ Email{
+    border-radius: 10%;
+    margin-bottom: 20px;
+}
+
+.subscribe{
+    margin:1em;
+}
+
+#submit{
+    width: 153px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
 }
 
 
