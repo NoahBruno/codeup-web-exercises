@@ -6,6 +6,9 @@
         display: flex;
         justify-content: left;
     }
+    .nav-links{
+        float:right;
+    }
     ul.nav-links{
         list-style-type: none;
     }

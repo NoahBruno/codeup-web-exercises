@@ -1,0 +1,16 @@
+h2{
+    color:deeppink;
+    background-color: #2f2f3b;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
+}
+
+main > p {
+    border:1px solid deeppink;
+}
