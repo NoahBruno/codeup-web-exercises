@@ -3,15 +3,19 @@
         display: none;
     }
     h1{
-        display: flex;
-        justify-content: left;
+        float:left;
+    }
+    nav{
+        float:right;
+        /*display: flex;*/
+        /*justify-content: flex-end;*/
     }
     ul.nav-links{
         list-style-type: none;
+        display: flex;
     }
     li{
         margin:20px;
-        float:right;
     }
     img{
         height:400px;
@@ -46,7 +50,7 @@
     .nav-links{
         display: flex;
         flex-direction: column;
-        padding:10px;
+        padding:5px;
         justify-content: center;
     }
     li>a{
