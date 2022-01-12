@@ -17,7 +17,12 @@
 var promptAnswer=prompt("What is your name?")
 
 //input the name saved in span
+var retrievedSpan=document.getElementById("name");
 
+console.log("promptAnswer", promptAnswer);
+console.log("retrieveSpan", retrievedSpan);
+
+retrievedSpan.innerHTML = promptAnswer;
 
 </script>
 </html>
