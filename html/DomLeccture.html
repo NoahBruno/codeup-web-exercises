@@ -10,18 +10,68 @@
 <body>
     <h1>Hello <span id="name"></span></h1>
 <p id="weather">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aliquam animi corporis cumque doloribus dolorum eaque error et fugit, incidunt iure labore obcaecati quia quis vel voluptate. Ipsum, veritatis.</p>
+
+    <h1>List One</h1>
+    <ul>
+        <li class="odd list-one-item">List 1, Item 1</li>
+        <li class="even list-one-item">List 1, Item 2</li>
+    </ul>
+    <h1>List Two</h1>
+    <ul>
+        <li class="odd list-two-item">List 2, Item 1</li>
+        <li class="even list-two-item">List 2, Item 2</li>
+    </ul>
+
+    <form name="login">
+        <div>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password">
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+    <h1 id="main-heading">Hello World!</h1>
+    <div id="main-section">
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+    </div>
 </body>
 <script>
 
-     var promptWeather= prompt("what is the weather like today?");
+     // var promptWeather= prompt("what is the weather like today?");
+     //
+     // var retrievedP= document.getElementById("weather");
+     //
+     // retrievedP.innerHTML = "the weather is " + promptWeather + " today";
 
-     var retrievedP= document.getElementById("weather");
 
-     retrievedP.innerHTML = "the weather is " + promptWeather + " today";
+     // (function() {
+     //     // Get all elements with class 'even'
+     //     var evenElements = document.getElementsByClassName('even');
+     //
+     //     // Print the first element
+     //     console.log(evenElements[0]); // Prints li.even.list-one-item
+     //
+     //     // Print all elements
+     //     for (var i = 0; i < evenElements.length; i++) {
+     //         console.log(evenElements[i]);
+     //     }
+     //     evenElements[i].innerHTML = "hi";
+     //
+     //     // Prints:
+     //     // li.even.list-one-item
+     //     // li.even.list-two-item
+     //
+     // })();
 
 
 
-// <!--    change span to say input name-->
+     // <!--    change span to say input name-->
 
 //make a prompt to ask user for name
 // var promptAnswer=prompt("What is your name?")
@@ -33,7 +83,19 @@
 // console.log("retrieveSpan", retrievedSpan);
 //
 // retrievedSpan.innerHTML = promptAnswer;
+     (function() {
+         // Get the body element (notice we need to use index 0 of the array!)
+         var bodyElement = document.getElementsByTagName('h1')[0];
 
+         // Change the body font color
+         bodyElement.style.color = '#065666'; // Dark grey
+
+         bodyElement.style['background-color'] = "#777333"; // Very light grey
+         // We had to use [] syntax since the property name has a dash
+
+         bodyElement.style.fontFamily = "Helvetica, Verdana, Sans-Serif";
+         // Replace dashes with camelCase to use standard . syntax
+     })();
 
 
 </script>
