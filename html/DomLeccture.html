@@ -9,20 +9,32 @@
 </head>
 <body>
     <h1>Hello <span id="name"></span></h1>
+<p id="weather">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aliquam animi corporis cumque doloribus dolorum eaque error et fugit, incidunt iure labore obcaecati quia quis vel voluptate. Ipsum, veritatis.</p>
 </body>
 <script>
-<!--    change span to say input name-->
+
+     var promptWeather= prompt("what is the weather like today?");
+
+     var retrievedP= document.getElementById("weather");
+
+     retrievedP.innerHTML = "the weather is " + promptWeather + " today";
+
+
+
+// <!--    change span to say input name-->
 
 //make a prompt to ask user for name
-var promptAnswer=prompt("What is your name?")
+// var promptAnswer=prompt("What is your name?")
+//
+// //input the name saved in span
+// var retrievedSpan=document.getElementById("name");
+//
+// console.log("promptAnswer", promptAnswer);
+// console.log("retrieveSpan", retrievedSpan);
+//
+// retrievedSpan.innerHTML = promptAnswer;
 
-//input the name saved in span
-var retrievedSpan=document.getElementById("name");
 
-console.log("promptAnswer", promptAnswer);
-console.log("retrieveSpan", retrievedSpan);
-
-retrievedSpan.innerHTML = promptAnswer;
 
 </script>
 </html>
