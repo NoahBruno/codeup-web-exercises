@@ -8,14 +8,17 @@
     <title>Document</title>
 </head>
 <body>
+<h2 id="change-me">sup</h2>
 <h1>Hi Planet</h1>
 <p id="orange">Table of contents</p>
-<button id="btn1">Change The Paragraph Color</button>
+<button id="btn1" value="no">Change The Paragraph Color</button>
+<button id="dark">dark</button>
 <script>
     var el= document.getElementById("orange");
     el.style.color ="orange";
 
-    var listener= function (event){
+    var listener= function (event) {
+
         el.style.color = "purple";
     }
     document.getElementById("btn1").addEventListener('click',listener)
@@ -26,6 +29,28 @@
         el.style.color = "green";
         sup.style.color="pink";
     });
+
+    document.getElementById("dark").addEventListener('click',function(){
+        let bod=document.getElementsByTagName('body')[0];
+        // console.log(bod.style.backgroundColor);
+        if (bod.style.backgroundColor !== 'black'){
+            bod.setAttribute("style", "background-color: black; color: white");
+        }
+        else{
+            bod.setAttribute("style", " background-color:white; color:black");
+        }
+    });
+
+    // function changeTextSize(){
+    //     this.style.color = "red";
+    // }
+    //
+    // var h2 = document.getElementById("change-me");
+    //
+    // h2.addEventListener("click", changeTextSize);
+    //
+    // h2.removeEventListener("",changeTextSize);
+
 
 </script>
 </body>
