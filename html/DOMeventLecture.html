@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Hi Planet</h1>
+<p id="orange">Table of contents</p>
+<button id="btn1">Change The Paragraph Color</button>
+<script>
+    var el= document.getElementById("orange");
+    el.style.color ="orange";
+
+    var listener= function (event){
+        el.style.color = "purple";
+    }
+    document.getElementById("btn1").addEventListener('click',listener)
+
+    var sup=document.getElementsByTagName("h1")[0];
+
+    el.addEventListener("click", function (){
+        el.style.color = "green";
+        sup.style.color="pink";
+    });
+
+</script>
+</body>
+</html>
