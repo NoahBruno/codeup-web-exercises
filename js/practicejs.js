@@ -20,7 +20,7 @@ var names = ["Ryan", "Kieran", "Jason", "Mary", "Jo", "Jake"];
 // console.log(name)
 
 for (var i = 0; i < names.length; i++){
-    if(names[i].length > 4){
+    if(names[i].length === 4){
         console.log("The names " + names[i] + ", James " + names[i])
     }else{
         console.log("nope")
