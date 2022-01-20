@@ -46,18 +46,18 @@
 
 
 //ARRAYS
-let cities = [
-    {city: "San Antonio", people:30, isGreat: true, team: "spurs"},
-    {city: "Houston", people:40, isGreat: false, team: "rockets"},
-    {city: "Dallas", people:50, isGreat: false, team: "mavericks"},
-    {city: "Austin", people:10, isGreat: true, team: "weird"},
-]
-
-cities.forEach(function(city){
-    console.log("is " + city.city + " great " + city.isGreat);
-})
-
-let sports = ["spurs", "rockets", "knicks", "bucks"];
+// let cities = [
+//     {city: "San Antonio", people:30, isGreat: true, team: "spurs"},
+//     {city: "Houston", people:40, isGreat: false, team: "rockets"},
+//     {city: "Dallas", people:50, isGreat: false, team: "mavericks"},
+//     {city: "Austin", people:10, isGreat: true, team: "weird"},
+// ]
+//
+// cities.forEach(function(city){
+//     console.log("is " + city.city + " great " + city.isGreat);
+// })
+//
+// let sports = ["spurs", "rockets", "knicks", "bucks"];
 // sports.forEach(function (team){
 //     if (team === "spurs"){
 //         console.log("the best " + team)
@@ -73,11 +73,43 @@ let sports = ["spurs", "rockets", "knicks", "bucks"];
 //     }
 // }
 
-sports.forEach(function(team ){
-    let firstLetter = team.charAt(0)
-    if(firstLetter == "r"){
-        console.log("yepp starts with r its the " + team)
+// sports.forEach(function(team ){
+//     let firstLetter = team.charAt(0)
+//     if(firstLetter == "r"){
+//         console.log("yepp starts with r its the " + team)
+//     }else{
+//         console.log("nope dont start with r its the " + team)
+//     }
+// })
+
+// write a function that accepts a string and checks whether each character in the string is upperCase or lowerCase and returns "letter  [insert letter] is uppercase/lowercase", accordingly.  Bonus: return "is not a character" if it's not a letter
+//
+// input example: "bJIENsdfRAIRVIrsRFAijgRar"
+
+let word = "bJIENsdfRAIRVIrsRFAijgRar"
+
+// for ( let i = 0 ; i > word.length; i++){
+//     if (word.charAt(1) === word.toUpperCase()){
+//         console.log(word);
+//     }else{
+//         console.log("nope");
+//     }
+// }
+
+var strings = "bJIENsdfRAIRVIrsRFAijgRar" ;
+var i=0;
+var character='';
+while (i <= strings.length){
+    character = strings.charAt(i);
+    if (!isNaN(character * 1)){
+        console.log('character is numeric');
     }else{
-        console.log("nope dont start with r its the " + team)
+        if (character == character.toUpperCase()) {
+            console.log(i + ' upper case true');
+        }
+        if(character == character.toLowerCase()){
+            console.log('lower case true');
+        }
     }
-})
+    i++;
+}
