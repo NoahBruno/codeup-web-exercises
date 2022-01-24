@@ -30,3 +30,13 @@ for (var i = 0; i < names.length; i++){
 for (let i = 0; i < 10; i++){
     console.log("Repetition is a good thing.");
 }
+
+// PROBLEM:  write a function that accepts a string of numbers and returns the sum of those numbers
+// INPUT 1: "42958372" --- EXPECTED OUTPUT 1: 40
+// INPUT 2: "917485"      --- EXPECTED OUTPUT 2: 34 (edited)
+
+let num = "42958372";
+
+for (let i = 0; i < num.length; i++){
+    console.log(i)
+}
