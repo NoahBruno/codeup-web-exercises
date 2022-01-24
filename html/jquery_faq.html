@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .invisible{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dt>1</dt>
+    <dd>one</dd>
+    <dt>2</dt>
+    <dd>two</dd>
+    <dt>3</dt>
+    <dd>three</dd>
+    <dt>4</dt>
+    <dd>four</dd>
+    <dt>5</dt>
+    <dd>five</dd>
+    <dt>6</dt>
+    <dd>six</dd>
+    <dt>7</dt>
+    <dd>seven</dd>
+    <dt>8</dt>
+    <dd>eight</dd>
+    <dt>9</dt>
+    <dd>nine</dd>
+    <dt>10</dt>
+    <dd>ten</dd>
+    <a id="me" href="">click me to see</a>
+</dl>
+<script src="../js/jquery-2.2.4.js">
+</script>
+<script>
+    $("dd").addClass("invisible");
+
+    $("#me").click(function(event){
+        event.preventDefault();
+        $("dd").toggleClass("invisible")
+    });
+
+</script>
+</body>
+</html>
