@@ -25,16 +25,16 @@
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 <script>
     "use strict";
-    var cheatcode = [38,38,40,40,37,39,37,39,66,65];
+    var konami = [38,38,40,40,37,39,37,39,66,65];
     var current= 0
        $(document).keyup(function(event) {
-           if (cheatcode.indexOf(event.keyCode) < 0 || event.keyCode !== cheatcode[current]) {
+           if (konami.indexOf(event.keyCode) < 0 || event.keyCode !== konami[current]) {
                current = 0;
                return;
            }
            current++;
 
-           if(cheatcode.length===current){
+           if(konami.length===current){
                alert("you get 30 extra lives")
            }
        });
