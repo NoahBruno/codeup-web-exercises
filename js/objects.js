@@ -144,24 +144,24 @@ var person= {}
     //     console.log(createBook.author)
     //
     // });
-    function createBook(bookTitle, Afirst,  Alast) {
-        return {
-            title: bookTitle,
-            author: {
-                first: Afirst,
-                last: Alast
-            },
-            showBookInfo: function () {
-                console.log(this.title);
-                console.log(this.author.first + " " + this.author.last);
-
-
-            }
-        }
-    }
-    const newBook = createBook("a","b","c")
-
-    newBook.showBookInfo()
+    // function createBook(bookTitle, Afirst,  Alast) {
+    //     return {
+    //         title: bookTitle,
+    //         author: {
+    //             first: Afirst,
+    //             last: Alast
+    //         },
+    //         showBookInfo: function () {
+    //             console.log(this.title);
+    //             console.log(this.author.first + " " + this.author.last);
+    //
+    //
+    //         }
+    //     }
+    // }
+    // const newBook = createBook("a","b","c")
+    //
+    // newBook.showBookInfo()
 
 
 
