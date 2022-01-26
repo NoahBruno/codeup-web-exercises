@@ -64,3 +64,5 @@ var arr = input.split('')
 console.log([...new Set(
     arr.filter((value, index, self) => self.indexOf(value) !== index))]
 );
+
+console.log('-')

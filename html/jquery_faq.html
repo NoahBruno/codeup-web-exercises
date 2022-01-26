@@ -96,13 +96,11 @@
     });
 
     $("h3").click(function(event){
-        event.preventDefault()
         $(this).next().children().css("font-weight", "bold");
     });
 
     $("li").click(function(event) {
-        event.preventDefault();
-        $("li").parent().first().css("color", "blue");
+        $(this).siblings().first().css("color", "blue");
     });
 
 
