@@ -49,3 +49,33 @@
 //.post()
 // same as this ^
 //.ajax(URL , options)
+
+
+$.get(URL)
+    .done(function(data){
+        console.log(data); //--- log to confirm if object or an array
+        $.each(data, function(i, comment){
+            console.log(comment.name);
+
+            let newEl = `<h1> ${comment.name} <h1>`;
+
+            $(".container").append(newEl)
+        })
+    })
+
+
+//SECURE WAY
+let newEl = document.createElement("h1");
+let name = comment.name;
+newEl.innerHTML = name;
+$(".container").append(newEl)
+
+
+
+
+
+
+
+
+
+
