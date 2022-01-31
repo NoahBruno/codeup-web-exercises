@@ -1,0 +1,70 @@
+<<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+<style>
+    #map{
+        width: 100%;
+        height:700px;
+    }
+    .my-class{
+        width:40px;
+        height:40px;
+    }
+</style>
+    <title>Document</title>
+</head>
+<body>
+<h1>My First Map</h1>
+
+<div id="map">
+
+</div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoibm9haC1icnVubyIsImEiOiJja3l4aGVrNHEwMGZ2MnZueHl0OW1lYm03In0.OV3KW0mj-qm9MvYWOpIYAA';
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+    // Create a new marker.
+    const marker = new mapboxgl.Marker()
+        .setLngLat([30.5, 50.5])
+        .addTo(map);
+
+    const markerHeight = 50;
+    const markerRadius = 10;
+    const linearOffset = 25;
+    const popupOffsets = {
+        'top': [0, 0],
+        'top-left': [0, 0],
+        'top-right': [0, 0],
+        'bottom': [0, -markerHeight],
+        'bottom-left': [linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+        'bottom-right': [-linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+        'left': [markerRadius, (markerHeight - markerRadius) * -1],
+        'right': [-markerRadius, (markerHeight - markerRadius) * -1]
+    };
+    const popup = new mapboxgl.Popup({offset: popupOffsets, className: 'my-class'})
+        .setLngLat(e.lngLat)
+        .setHTML("<h1>Hello World!</h1>")
+        .setMaxWidth("300px")
+        .addTo(map);
+
+
+
+</script>
+</body>
+</html>
