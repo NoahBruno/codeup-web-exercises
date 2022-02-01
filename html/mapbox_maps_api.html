@@ -16,6 +16,7 @@
     .maps{
         width:40px;
         height:40px;
+        background-image: url("https://media-cdn.tripadvisor.com/media/photo-p/1c/9c/d1/4b/spicy-el-diablo.jpg");
     }
 </style>
     <title>Document</title>
@@ -27,9 +28,13 @@
 <div id="map">
 
 </div>
+<button type="button" id="b1">zoom 5</button>
+<button type="button" id="b2">zoom 10</button>
+<button type="button" id="b3">zoom 15</button>
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
 <script src="/js/mapbox-geocoder-utils.js"></script>
+<script src="/js.gitignore"></script>
 
 
 <script>
@@ -89,6 +94,19 @@
         placeMarkerAndPopup(restaurant, mapboxgl.accessToken, map);
     })
 
+    // const scale = new mapboxgl.ScaleControl({
+    //     maxWidth: 80,
+    //     unit: 'imperial'
+    // });
+    // map.addControl(scale);
+    //
+    // scale.setUnit('metric');
+
+    // map.doubleClickZoom.enable();
+
+    // document.getElementById("#b1").click(funciton(e){
+    //     map.flyto({zoom:5});
+    // })
 
 
 

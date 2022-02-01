@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet'>
+    <style>
+        .icon{
+            height:90px;
+            width: 20px;
+        }
+        #map{
+            width: 100%;
+            height:375px;
+        }
+        .card-body{
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body class="container">
+<h2 class="text-center">Weather App</h2>
+
+<div id="container" class="container row justify-content-center">
+    <div class="card mx-2" style="width: 14rem;">
+        <div class="card-img icon" id="iconOne"></div>
+        <div class="card-body" id="cardOne">
+
+        </div>
+    </div>
+    <div class="card mx-2" style="width: 14rem;">
+        <div class="card-img icon" id="iconTwo"></div>
+        <div class="card-body" id="cardTwo">
+
+        </div>
+    </div>
+    <div class="card mx-2" style="width: 14rem;">
+        <div class="card-img icon" id="iconThree"></div>
+        <div class="card-body" id="cardThree">
+
+        </div>
+    </div>
+    <div class="card mx-2" style="width: 14rem;">
+        <div class="card-img icon" id="iconFour"></div>
+        <div class="card-body" id="cardFour">
+
+        </div>
+    </div>
+    <div class="card mx-2" style="width: 14rem;">
+        <div class="card-img icon" id="iconFive"></div>
+        <div class="card-body" id="cardFive">
+
+        </div>
+    </div>
+</div>
+<div id="map">
+
+</div>
+<pre id="info"></pre>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="/.idea/keys.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+<script src="/js/mapbox-geocoder-utils.js"></script>
+<script>
+
+
+    $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lats}&lon=${lngs}&exclude=${"hour;y"}&appid=${weatherMapKey}&units=${"imperial"}`)
+    .done(function(weather){
+        console.log(weather)
+
+
+        //DAY ONE
+        var myDate = new Date(weather.daily[0].dt * 1000);
+        var iconCode = weather.daily[0].weather[0].icon;
+        var iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+        $("#iconOne").append("<img src='" + iconUrl  + "'>");
+        $('#cardOne').append(`<p>${myDate.getMonth() + 1} / ${myDate.getDate()}</p>`);
+        $('#cardOne').append(`<span>Temp: Low & High<span>`);
+        $('#cardOne').append(`<p>${weather.daily[0].temp.min} / ${weather.daily[0].temp.max}</p>`);
+        $('#cardOne').append(`<p>${weather.daily[0].weather[0].description.toUpperCase()}</p>`);
+        $('#cardOne').append(`<p>Humidity: ${weather.daily[0].humidity}</p>`);
+        $('#cardOne').append(`<p>Wind Speed: ${weather.daily[0].wind_speed}</p>`);
+
+        //DAY TWO
+        var myDate2 = new Date(weather.daily[1].dt * 1000);
+        var iconCodeTwo = weather.daily[1].weather[0].icon;
+        var iconUrlTwo = "http://openweathermap.org/img/wn/" + iconCodeTwo + "@2x.png";
+        $("#iconTwo").append("<img src='" + iconUrlTwo  + "'>");
+        $('#cardTwo').append(`<p>${myDate2.getMonth() + 1} / ${myDate2.getDate()}</p>`);
+        $('#cardTwo').append(`<span>Temp: Low & High<span>`);
+        $('#cardTwo').append(`<p>${weather.daily[1].temp.min} / ${weather.daily[1].temp.max}</p>`);
+        $('#cardTwo').append(`<p>${weather.daily[1].weather[0].description.toUpperCase()}</p>`);
+        $('#cardTwo').append(`<p>Humidity: ${weather.daily[1].humidity}</p>`);
+        $('#cardTwo').append(`<p>Wind Speed: ${weather.daily[1].wind_speed}</p>`);
+
+        //DAY THREE
+        var myDate3 = new Date(weather.daily[2].dt * 1000);
+        var iconCodeThree = weather.daily[2].weather[0].icon;
+        var iconUrlThree = "http://openweathermap.org/img/wn/" + iconCodeThree + "@2x.png";
+        $("#iconThree").append("<img src='" + iconUrlThree  + "'>");
+        $('#cardThree').append(`<p>${myDate3.getMonth() + 1} / ${myDate3.getDate()}</p>`);
+        $('#cardThree').append(`<span>Temp: Low & High<span>`);
+        $('#cardThree').append(`<p>${weather.daily[2].temp.min} / ${weather.daily[2].temp.max}</p>`);
+        $('#cardThree').append(`<p>${weather.daily[2].weather[0].description.toUpperCase()}</p>`);
+        $('#cardThree').append(`<p>Humidity: ${weather.daily[2].humidity}</p>`);
+        $('#cardThree').append(`<p>Wind Speed: ${weather.daily[2].wind_speed}</p>`);
+
+        //DAY FOUR
+        var myDate4 = new Date(weather.daily[3].dt * 1000);
+        var iconCodeFour = weather.daily[3].weather[0].icon;
+        var iconUrlFour = "http://openweathermap.org/img/wn/" + iconCodeFour + "@2x.png";
+        $("#iconFour").append("<img src='" + iconUrlFour  + "'>");
+        $('#cardFour').append(`<p>${myDate4.getMonth() + 1} / ${myDate4.getDate()}</p>`);
+        $('#cardFour').append(`<span>Temp: Low & High<span>`);
+        $('#cardFour').append(`<p>${weather.daily[3].temp.min} / ${weather.daily[3].temp.max}</p>`);
+        $('#cardFour').append(`<p>${weather.daily[3].weather[0].description.toUpperCase()}</p>`);
+        $('#cardFour').append(`<p>Humidity: ${weather.daily[3].humidity}</p>`);
+        $('#cardFour').append(`<p>Wind Speed: ${weather.daily[3].wind_speed}</p>`);
+
+        //DAY FIVE
+        var myDate5 = new Date(weather.daily[4].dt * 1000);
+        var iconCodeFive = weather.daily[4].weather[0].icon;
+        var iconUrlFive = "http://openweathermap.org/img/wn/" + iconCodeFive + "@2x.png";
+        $("#iconFive").append("<img src='" + iconUrlFive  + "'>");
+        $('#cardFive').append(`<p>${myDate5.getMonth() + 1} / ${myDate5.getDate()}</p>`);
+        $('#cardFive').append(`<span>Temp: Low & High<span>`);
+        $('#cardFive').append(`<p>${weather.daily[4].temp.min} / ${weather.daily[4].temp.max}</p>`);
+        $('#cardFive').append(`<p>${weather.daily[4].weather[0].description.toUpperCase()}</p>`);
+        $('#cardFive').append(`<p>Humidity: ${weather.daily[4].humidity}</p>`);
+        $('#cardFive').append(`<p>Wind Speed: ${weather.daily[4].wind_speed}</p>`);
+
+
+
+    })
+
+    mapboxgl.accessToken = mapKey;
+
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.50,29.61], // starting position [lng, lat]
+        zoom: 5 // starting zoom
+    });
+
+    map.on('click', (e) => {
+        // console.log(e)
+        // console.log(e.lngLat.lat)
+        var lats = e.lngLat.lat
+        var lngs = e.lngLat.lng
+        console.log(lats)
+        console.log(lngs)
+        document.getElementById('info').innerHTML =
+// `e.point` is the x, y coordinates of the `mousemove` event
+// relative to the top-left corner of the map.
+            JSON.stringify(e.point) +
+            '<br />' +
+            // `e.lngLat` is the longitude, latitude geographical position of the event.
+            JSON.stringify(e.lngLat);
+            // '<br>' +
+            // JSON.stringify(e.lat);
+
+    });
+
+</script>
+</body>
+</html>
