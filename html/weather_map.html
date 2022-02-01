@@ -19,48 +19,62 @@
         .card-body{
             text-align: center;
         }
+        .coordinates {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 11px;
+            line-height: 18px;
+            border-radius: 3px;
+            display: none;
+        }
     </style>
     <title>Document</title>
 </head>
 <body class="container">
 <h2 class="text-center">Weather App</h2>
 
-<div id="container" class="container row justify-content-center">
+<section id="container" class="container row justify-content-center click">
     <div class="card mx-2" style="width: 14rem;">
-        <div class="card-img icon" id="iconOne"></div>
-        <div class="card-body" id="cardOne">
+        <div class="card-img icon newCard" id="iconOne"></div>
+        <div class="card-body newCard" id="cardOne">
 
         </div>
     </div>
     <div class="card mx-2" style="width: 14rem;">
-        <div class="card-img icon" id="iconTwo"></div>
-        <div class="card-body" id="cardTwo">
+        <div class="card-img icon newCard" id="iconTwo"></div>
+        <div class="card-body newCard" id="cardTwo">
 
         </div>
     </div>
     <div class="card mx-2" style="width: 14rem;">
-        <div class="card-img icon" id="iconThree"></div>
-        <div class="card-body" id="cardThree">
+        <div class="card-img icon newCard" id="iconThree"></div>
+        <div class="card-body newCard" id="cardThree">
 
         </div>
     </div>
     <div class="card mx-2" style="width: 14rem;">
-        <div class="card-img icon" id="iconFour"></div>
-        <div class="card-body" id="cardFour">
+        <div class="card-img icon newCard" id="iconFour"></div>
+        <div class="card-body newCard" id="cardFour">
 
         </div>
     </div>
     <div class="card mx-2" style="width: 14rem;">
-        <div class="card-img icon" id="iconFive"></div>
-        <div class="card-body" id="cardFive">
+        <div class="card-img icon newCard" id="iconFive"></div>
+        <div class="card-body newCard" id="cardFive">
 
         </div>
     </div>
+</section>
+<div id="map" class="new pin">
+
 </div>
-<div id="map">
-
-</div>
-<pre id="info"></pre>
+<button type="button" id='button'>Remove Marker</button>
+<pre id="coordinates" class="coordinates"></pre>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -69,18 +83,46 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
 <script src="/js/mapbox-geocoder-utils.js"></script>
 <script>
+    mapboxgl.accessToken = mapKey;
+
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.50,29.61], // starting position [lng, lat]
+        zoom: 5 // starting zoom
+    });
+
+    // const coordinates = document.getElementById('coordinates');
+    //
+    // const marker = new mapboxgl.Marker({
+    //     draggable: true
+    // })
+    //     .setLngLat([29.6575, -98.7645])
+    //     .addTo(map);
 
 
-    $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lats}&lon=${lngs}&exclude=${"hour;y"}&appid=${weatherMapKey}&units=${"imperial"}`)
-    .done(function(weather){
-        console.log(weather)
+
+    $('.new').click(function(){
+        $('.newCard').html('')
+    })
+
+
+
+    getWeather(29.9857,-98.6578);
+
+function getWeather (latitude, longitude){
+                         $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=${"hour;y"}&appid=${weatherMapKey}&units=${"imperial"}`)
+
+    .done(function(weather) {
+
+
 
 
         //DAY ONE
         var myDate = new Date(weather.daily[0].dt * 1000);
         var iconCode = weather.daily[0].weather[0].icon;
         var iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
-        $("#iconOne").append("<img src='" + iconUrl  + "'>");
+        $("#iconOne").append("<img src='" + iconUrl + "'>");
         $('#cardOne').append(`<p>${myDate.getMonth() + 1} / ${myDate.getDate()}</p>`);
         $('#cardOne').append(`<span>Temp: Low & High<span>`);
         $('#cardOne').append(`<p>${weather.daily[0].temp.min} / ${weather.daily[0].temp.max}</p>`);
@@ -92,7 +134,7 @@
         var myDate2 = new Date(weather.daily[1].dt * 1000);
         var iconCodeTwo = weather.daily[1].weather[0].icon;
         var iconUrlTwo = "http://openweathermap.org/img/wn/" + iconCodeTwo + "@2x.png";
-        $("#iconTwo").append("<img src='" + iconUrlTwo  + "'>");
+        $("#iconTwo").append("<img src='" + iconUrlTwo + "'>");
         $('#cardTwo').append(`<p>${myDate2.getMonth() + 1} / ${myDate2.getDate()}</p>`);
         $('#cardTwo').append(`<span>Temp: Low & High<span>`);
         $('#cardTwo').append(`<p>${weather.daily[1].temp.min} / ${weather.daily[1].temp.max}</p>`);
@@ -104,7 +146,7 @@
         var myDate3 = new Date(weather.daily[2].dt * 1000);
         var iconCodeThree = weather.daily[2].weather[0].icon;
         var iconUrlThree = "http://openweathermap.org/img/wn/" + iconCodeThree + "@2x.png";
-        $("#iconThree").append("<img src='" + iconUrlThree  + "'>");
+        $("#iconThree").append("<img src='" + iconUrlThree + "'>");
         $('#cardThree').append(`<p>${myDate3.getMonth() + 1} / ${myDate3.getDate()}</p>`);
         $('#cardThree').append(`<span>Temp: Low & High<span>`);
         $('#cardThree').append(`<p>${weather.daily[2].temp.min} / ${weather.daily[2].temp.max}</p>`);
@@ -116,7 +158,7 @@
         var myDate4 = new Date(weather.daily[3].dt * 1000);
         var iconCodeFour = weather.daily[3].weather[0].icon;
         var iconUrlFour = "http://openweathermap.org/img/wn/" + iconCodeFour + "@2x.png";
-        $("#iconFour").append("<img src='" + iconUrlFour  + "'>");
+        $("#iconFour").append("<img src='" + iconUrlFour + "'>");
         $('#cardFour').append(`<p>${myDate4.getMonth() + 1} / ${myDate4.getDate()}</p>`);
         $('#cardFour').append(`<span>Temp: Low & High<span>`);
         $('#cardFour').append(`<p>${weather.daily[3].temp.min} / ${weather.daily[3].temp.max}</p>`);
@@ -128,7 +170,7 @@
         var myDate5 = new Date(weather.daily[4].dt * 1000);
         var iconCodeFive = weather.daily[4].weather[0].icon;
         var iconUrlFive = "http://openweathermap.org/img/wn/" + iconCodeFive + "@2x.png";
-        $("#iconFive").append("<img src='" + iconUrlFive  + "'>");
+        $("#iconFive").append("<img src='" + iconUrlFive + "'>");
         $('#cardFive').append(`<p>${myDate5.getMonth() + 1} / ${myDate5.getDate()}</p>`);
         $('#cardFive').append(`<span>Temp: Low & High<span>`);
         $('#cardFive').append(`<p>${weather.daily[4].temp.min} / ${weather.daily[4].temp.max}</p>`);
@@ -137,36 +179,42 @@
         $('#cardFive').append(`<p>Wind Speed: ${weather.daily[4].wind_speed}</p>`);
 
 
+    })
+    }
+
+    map.on('click', (e) => {
+
+
+        var lats = e.lngLat.lat
+        var lngs = e.lngLat.lng
+        getWeather(lats, lngs);
+        placeMarkerAndPopup(e,mapboxgl.accessToken,map)
+
+
+        // $('#button').click(function(){
+        //     marker.remove()
+        // })
 
     })
 
-    mapboxgl.accessToken = mapKey;
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function (coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML();
+            var marker = new mapboxgl.Marker()
+                .getLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
+        });
+    }
 
-    var map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.50,29.61], // starting position [lng, lat]
-        zoom: 5 // starting zoom
-    });
 
-    map.on('click', (e) => {
-        // console.log(e)
-        // console.log(e.lngLat.lat)
-        var lats = e.lngLat.lat
-        var lngs = e.lngLat.lng
-        console.log(lats)
-        console.log(lngs)
-        document.getElementById('info').innerHTML =
-// `e.point` is the x, y coordinates of the `mousemove` event
-// relative to the top-left corner of the map.
-            JSON.stringify(e.point) +
-            '<br />' +
-            // `e.lngLat` is the longitude, latitude geographical position of the event.
-            JSON.stringify(e.lngLat);
-            // '<br>' +
-            // JSON.stringify(e.lat);
 
-    });
+
+
+
+
 
 </script>
 </body>
