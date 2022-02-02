@@ -10,6 +10,9 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
     <style>
+        body{
+            background-color: rgba(70, 173, 145, 0.3);
+        }
         .icon{
             height:90px;
             width: 20px;
@@ -20,6 +23,11 @@
         }
         .card-body{
             text-align: center;
+
+        }
+        .marg{
+            margin-bottom: 10px;
+            margin-top:10px;
         }
         .coordinates {
             background: rgba(0, 0, 0, 0.5);
@@ -34,49 +42,68 @@
             border-radius: 3px;
             display: none;
         }
+        .card{
+            border:20px;
+            background-color: rgba(87, 155, 87, 0.6);
+        }
+        h2{
+            background-image: url('/assets/sunshine.jpeg');
+            font-weight: bolder;
+            -webkit-text-stroke: medium;
+            -webkit-text-stroke-color: rgba(87, 155, 87, 0.9); ;
+            color: rgba(70, 173, 145);;
+            height:60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
     <title>Document</title>
 </head>
 <body class="container">
 <h2 class="text-center">Weather App</h2>
-<h4 id="cityName" class="d-flex justify-content-center"></h4>
+<div id="cityName" class="d-flex justify-content-center "></div>
+<!--<div class="d-flex justify-content-center marg">-->
+<!--<button type="button" class="btn btn-success" id="newSearch">New Weather Search</button>-->
+<!--</div>-->
 
 <section id="container" class="container row justify-content-center click">
-    <div class="card mx-2" style="width: 14rem;">
+    <div class="card mx-2 marg weave" style="width: 14rem;">
         <div class="card-img icon newCard" id="iconOne"></div>
         <div class="card-body newCard" id="cardOne">
 
         </div>
     </div>
-    <div class="card mx-2" style="width: 14rem;">
+    <div class="card mx-2 marg" style="width: 14rem;">
         <div class="card-img icon newCard" id="iconTwo"></div>
         <div class="card-body newCard" id="cardTwo">
 
         </div>
     </div>
-    <div class="card mx-2" style="width: 14rem;">
+    <div class="card mx-2 marg" style="width: 14rem;">
         <div class="card-img icon newCard" id="iconThree"></div>
         <div class="card-body newCard" id="cardThree">
 
         </div>
     </div>
-    <div class="card mx-2" style="width: 14rem;">
+    <div class="card mx-2 marg" style="width: 14rem;">
         <div class="card-img icon newCard" id="iconFour"></div>
         <div class="card-body newCard" id="cardFour">
 
         </div>
     </div>
-    <div class="card mx-2" style="width: 14rem;">
+    <div class="card mx-2 marg" style="width: 14rem;">
         <div class="card-img icon newCard" id="iconFive"></div>
         <div class="card-body newCard" id="cardFive">
 
         </div>
     </div>
 </section>
+<button type="button" id='button' class="btn btn-success">Remove Markers</button>
 <div id="map" class="new pin mark">
 
 </div>
-<button type="button" id='button'>Remove Markers</button>
+
 <pre id="coordinates" class="coordinates"></pre>
 
 
@@ -101,11 +128,11 @@
         $('.newCard').html('')
     })
 
-    $('#cityName').click(function(e){
-        console.log(e)
-            $('.newCard').html('')
-
-    })
+    // $('#newSearch').click(function(e){
+    //     console.log(e)
+    //         $('.newCard').html('')
+    //
+    // })
 
 
 
@@ -197,34 +224,30 @@ function getWeather (latitude, longitude){
         getWeather(lats, lngs);
 
 
-
-        $('#button').click(function(){
+        $('#button').click(function () {
             marker.remove()
         })
-
     })
-
-    // const marker = new mapboxgl.Marker() // initialize a new marker
-    //     .getLngLat([lngs,lats]) // Marker [lng, lat] coordinates
-    //     .addTo(map); // Add the marker to the map
 
     const geocoder = new MapboxGeocoder({
-        // Initialize the geocoder
-        accessToken: mapboxgl.accessToken, // Set the access token
-        mapboxgl: mapboxgl, // Set the mapbox-gl instance
-        marker: true // Do not use the default marker style
-    });
+            // Initialize the geocoder
+            accessToken: mapboxgl.accessToken, // Set the access token
+            mapboxgl: mapboxgl, // Set the mapbox-gl instance
+            marker: true // Do not use the default marker style
+        });
 
-    // Add the geocoder to the map
+        // Add the geocoder to the map
     document.getElementById('cityName').appendChild(geocoder.onAdd(map))
-    geocoder.on('results', function(results) {
-        console.log(results);
+        geocoder.on('results', function (results) {
+            console.log(results);
 
-        var lats= results.features[0].geometry.coordinates[0]
-        var lngs = results.features[0].geometry.coordinates[1]
 
-        getWeather(lats,lngs)
-    })
+            var lats = results.features[0].geometry.coordinates[0]
+            var lngs = results.features[0].geometry.coordinates[1]
+            $(".newCard").empty()
+            getWeather(lats, lngs)
+        })
+
 
 
 
