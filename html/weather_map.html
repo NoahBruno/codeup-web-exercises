@@ -219,27 +219,6 @@ function getWeather (latitude, longitude){
     })
     }
 
-    //Sets marker on click and changes cards
-    map.on('click', (e) => {
-        console.log(e)
-        var marker = new mapboxgl.Marker();
-
-        const lngLat = marker.getLngLat();
-
-        var lats = e.lngLat.lat;
-        var lngs = e.lngLat.lng;
-
-        marker.setLngLat([lngs, lats])
-        marker.addTo(map);
-
-        getWeather(lats, lngs);
-
-
-        $('#button').click(function () {
-            marker.remove()
-        })
-    })
-
     //Geocoder
     const geocoder = new MapboxGeocoder({
             // Initialize the geocoder
@@ -261,8 +240,24 @@ function getWeather (latitude, longitude){
     });
 
 
+    //Sets marker on click and changes cards
+    map.on('click', (e) => {
+        console.log(e)
+        const marker = new mapboxgl.Marker();
 
+        const lngLat = marker.getLngLat();
 
+        var lats = e.lngLat.lat;
+        var lngs = e.lngLat.lng;
+        marker.setLngLat([lngs, lats])
+        marker.addTo(map);
+
+        getWeather(lats, lngs);
+
+        $('#button').click(function () {
+            marker.remove()
+        })
+    })
 
 
 </script>
