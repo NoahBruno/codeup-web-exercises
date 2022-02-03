@@ -64,9 +64,6 @@
 <h2 class="text-center">Weather App</h2>
 <h3 id="place"></h3>
 <div id="cityName" class="d-flex justify-content-center "></div>
-<!--<div class="d-flex justify-content-center marg">-->
-<!--<button type="button" class="btn btn-success" id="newSearch">New Weather Search</button>-->
-<!--</div>-->
 
 <section id="container" class="container row justify-content-center click">
     <div class="card mx-2 marg weave" style="width: 14rem;">
@@ -126,14 +123,8 @@
 
 
     $('.new').click(function(){
-        $('.newCard').html('')
+        $(".newCard").empty();
     })
-
-    // $('#newSearch').click(function(e){
-    //     console.log(e)
-    //         $('.newCard').html('')
-    //
-    // })
 
 
 
@@ -237,8 +228,9 @@ function getWeather (latitude, longitude){
             marker: true // Do not use the default marker style
         });
 
-        // Add the geocoder to the map
+
     document.getElementById('cityName').appendChild(geocoder.onAdd(map))
+
     geocoder.on('result', (event) => {
         console.log(event)
             var lats = event.result.geometry.coordinates[0]
