@@ -44,9 +44,9 @@
         }
         .card{
             border:20px;
-            background-color:rgba(87, 155, 87, 0.4);
+            background-color: rgb(239, 227, 83, 0.4);
         }
-        h2{
+        h1{
             background-image: url('/assets/sunshine.jpeg');
             font-weight: bolder;
             -webkit-text-stroke: medium;
@@ -61,9 +61,12 @@
     <title>Document</title>
 </head>
 <body class="container">
-<h2 class="text-center">Weather App</h2>
+<h1 class="text-center">Weather App</h1>
 <h3 id="place"></h3>
 <div id="cityName" class="d-flex justify-content-center "></div>
+
+<h3>5 Day Forecast</h3>
+<hr>
 
 <section id="container" class="container row justify-content-center click">
     <div class="card mx-2 marg weave" style="width: 14rem;">
@@ -111,6 +114,7 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
 <script src="/js/mapbox-geocoder-utils.js"></script>
 <script>
+    //Makes Map
     mapboxgl.accessToken = mapKey;
 
     var map = new mapboxgl.Map({
@@ -121,15 +125,16 @@
     });
 
 
-
+    //Deletes cards on click
     $('.new').click(function(){
         $(".newCard").empty();
     })
 
 
-
+    //Beginning weather cards (San Antonio)
     getWeather(29.9857,-98.6578);
 
+    //Appends info to cards from API
 function getWeather (latitude, longitude){
                          $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=${"hour;y"}&appid=${weatherMapKey}&units=${"imperial"}`)
 
@@ -200,12 +205,12 @@ function getWeather (latitude, longitude){
     })
     }
 
+    //Sets marker on click and changes cards
     map.on('click', (e) => {
-
+        console.log(e)
         var marker = new mapboxgl.Marker();
 
         const lngLat = marker.getLngLat();
-        console.log(e)
 
         var lats = e.lngLat.lat;
         var lngs = e.lngLat.lng;
@@ -221,6 +226,7 @@ function getWeather (latitude, longitude){
         })
     })
 
+    //Geocoder
     const geocoder = new MapboxGeocoder({
             // Initialize the geocoder
             accessToken: mapboxgl.accessToken, // Set the access token
@@ -228,9 +234,10 @@ function getWeather (latitude, longitude){
             marker: true // Do not use the default marker style
         });
 
-
+    //Places Geocoder outside of map
     document.getElementById('cityName').appendChild(geocoder.onAdd(map))
 
+    //Takes search result and changes card
     geocoder.on('result', (event) => {
         console.log(event)
             var lats = event.result.geometry.coordinates[0]
