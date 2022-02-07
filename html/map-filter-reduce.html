@@ -115,6 +115,32 @@
     // console.log(mexicanFood)
 
     //reduce
+    //executes a callback function that takes two parameters (previous, current value) on each element in the array
+    //the final result of running the reducer across all elements of the array as a single value
+
+    let grades = [91, 88, 76, 88, 68, 95];
+
+    // let gradeTotal = grades.reduce(((previousValue, currentValue) => previousValue + currentValue));
+    // console.log(gradeTotal)
+    // console.log(gradeTotal/grades.length)
+
+    //Accumulator
+
+    // let gradesTotal = grades.reduce(function(previousValue, currentValue){
+    //     return previousValue + currentValue;
+    // }, 0)
+    // console.log(gradesTotal);
+
+    let specialties = foodOptions.reduce((uniqueSpecialties, restaurant) => {
+        if (!uniqueSpecialties.includes(restaurant.specialty)){
+            uniqueSpecialties.push(restaurant.specialty);
+        }
+        return uniqueSpecialties;
+    }, [])
+
+    console.log(specialties)
+
+
 </script>
 </body>
 </html>
