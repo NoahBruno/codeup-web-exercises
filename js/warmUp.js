@@ -55,14 +55,38 @@ var names = ["Ryan", "Kieran", "Jason", "Mary", "Jo", "Jake"];
 
 // INPUT: “42992338111134”
 // EXPECTED OUTPUT: {9: 2, 3: 2, 1: 4}
-var input = "42992338111134";
-var arr = input.split('')
-
-
+// var input = "42992338111134";
+// var arr = input.split('')
+//
+//
 // var array = [1, 2, 2, 3, 3, 4, 5, 6, 2, 3, 7, 8, 5, 22, 1, 2, 511, 12, 50, 22];
+//
+// console.log([...new Set(
+//     arr.filter((value, index, self) => self.indexOf(value) !== index))]
+// );
+//
+// console.log('-')
+
+//----------------------------------------------------------------------------------------------------------------
+// Morning Warmup:
+//     Write a function that removes any duplicates from an array.
+   let inputOne= [2,3,5,8,3,1,2,6,3,2,7,8,2,4,7]
+
 
 console.log([...new Set(
-    arr.filter((value, index, self) => self.indexOf(value) !== index))]
+    inputOne.filter((value, index, self) => self.indexOf(value) !== index))]
 );
 
 console.log('-')
+// let str = input.split
+//
+// // expected output: [2,3,5,8,1,6,7,4]
+//
+// let num = str.reduce((pValue, cValue) => {
+//     if (!pValue.includes(cValue.)){
+//         pValue.push(cValue.);
+//     }
+//     return pValue
+// }, [])
+//
+// console.log(num)
