@@ -1,6 +1,6 @@
 // Make a program that filters through this array: ["Ryan", "Kieran", "Jason", "Mary", "Jo", "Jake"] and returns a new array that contains only those whose name have only 4 letters in them.
 
-var names = ["Ryan", "Kieran", "Jason", "Mary", "Jo", "Jake"];
+// var names = ["Ryan", "Kieran", "Jason", "Mary", "Jo", "Jake"];
 
 // for (var i = 0; i < names.length; i++){
 //     if (newName > 4){
@@ -70,14 +70,14 @@ var names = ["Ryan", "Kieran", "Jason", "Mary", "Jo", "Jake"];
 //----------------------------------------------------------------------------------------------------------------
 // Morning Warmup:
 //     Write a function that removes any duplicates from an array.
-   let inputOne= [2,3,5,8,3,1,2,6,3,2,7,8,2,4,7]
-
-
-console.log([...new Set(
-    inputOne.filter((value, index, self) => self.indexOf(value) !== index))]
-);
-
-console.log('-')
+//    let inputOne= [2,3,5,8,3,1,2,6,3,2,7,8,2,4,7]
+//
+//
+// console.log([...new Set(
+//     inputOne.filter((value, index, self) => self.indexOf(value) !== index))]
+// );
+//
+// console.log('-')
 // let str = input.split
 //
 // // expected output: [2,3,5,8,1,6,7,4]
