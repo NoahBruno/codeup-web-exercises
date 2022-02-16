@@ -19,3 +19,8 @@ do {
     allCones-=ran;
 }while ( allCones>=0);
 console.log("cones all gone")
+
+let arr = [-2,5,8,-3,3,5,-9,6];
+
+
+
