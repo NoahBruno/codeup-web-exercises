@@ -7,6 +7,7 @@ const fetchPokemon = () => {
             .then((res) => res.json()))
     }
 
+
     Promise.all(promises).then(results => {
         const pokemon = results.map((data) =>
 
@@ -18,6 +19,10 @@ const fetchPokemon = () => {
             type: data.types.map((type) => type.type.name).join(', ')
         }));
         displayPokemon(pokemon);
+        $("#submit").click(function(event) {
+            event.preventDefault();
+            searchPokemons(pokemon);
+        })
     });
 
 };
@@ -48,16 +53,44 @@ const displayPokemon = (pokemon) => {
 
 fetchPokemon();
 
-$("#submit").click(function(event){
-    event.preventDefault();
-    let pokemonName = $("#input").val().trim();
-    let http = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
-    fetch(http).then((res) => res.json())
-        .then((json) => displayPokemon(json))
+function searchPokemons(pokemon) {
+    let pokemonName = $("#input").val();
+    for (let i = 1; i < pokemon.length; i++) {
+        if (pokemon[i].name === pokemonName) {
+            $("#poke").empty();
+            displayPokemons(pokemon[i]);
+        }
+    }
+}
 
+const displayPokemons = (pokeman) => {
+const html=
+        `<div class="card-group">
+<div class="card" style="width:18px;">
+<img src="${pokeman.image}">
+        <div class="card-body text-center">
+        <h5>${pokeman.name}</h5>
+        <p class="card-text">
+            ${pokeman.id}<br>
+            ${pokeman.height}<br>
+            ${pokeman.type}<br>
+        </p>
+        </div>
+        </div> 
+</div>`
 
+    $("#poke").append(html)
 
-})
+}
+
+//     // let http = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
+//     // fetch(http).then((res) => res.json())
+//     //     .then((json) => )
+//
+//
+//
+//
+// })
 
 
 
