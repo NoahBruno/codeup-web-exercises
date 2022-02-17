@@ -18,7 +18,6 @@ const fetchPokemon = () => {
             type: data.types.map((type) => type.type.name).join(', ')
         }));
         displayPokemon(pokemon);
-        search(pokemon)
     });
 
 };
@@ -49,31 +48,19 @@ const displayPokemon = (pokemon) => {
 
 fetchPokemon();
 
+$("#submit").click(function(event){
+    event.preventDefault();
+    let pokemonName = $("#input").val().trim();
+    let http = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
+    fetch(http).then((res) => res.json())
+        .then((json) => displayPokemon(json))
 
 
-// fetch(`https://pokeapi.co/api/v2/pokemon/charmander`)
-//     .then((res) =>
-//         res.json())
-//     .then(pokemon => {
-//         console.log(pokemon)
-//
-//             // let name= pokemons.name;
-//             // let id= data.id;
-//             // // image: data.sprites.other.home.front_shiny,
-//             // let height= pokemons.height;
-//             // let weight= pokemons.weight;
-//             // let type= pokemons.types.map((type) => type.type.name).join(', ')
-//         });
+
+})
 
 
-// function appendPoke(pokemon){
-//     let myContainer= document.getElementById('#pokemon');
-//     for (let i = 1; i > 300 ; i++){
-//         var space = ""
-//         console.log(pokemon)
-//
 
-//     }
-// }
+
 
 
