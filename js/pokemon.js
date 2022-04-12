@@ -37,9 +37,9 @@ const displayPokemon = (pokemon) => {
         <div class="card-body text-center">
         <h5>${pokeman.name}</h5>
         <p class="card-text">
-            ${pokeman.id}<br>
-            ${pokeman.height}<br>
-            ${pokeman.type}<br>
+            Pokedex #${pokeman.id}<br>
+            Height: ${pokeman.height}<br>
+            Types: ${pokeman.type}<br>
         </p>
         </div>
         </div> 
@@ -59,6 +59,7 @@ function searchPokemons(pokemon) {
         if (pokemon[i].name === pokemonName) {
             $("#poke").empty();
             displayPokemons(pokemon[i]);
+            break;
         }
     }
 }
@@ -71,9 +72,9 @@ const html=
         <div class="card-body text-center">
         <h5>${pokeman.name}</h5>
         <p class="card-text">
-            ${pokeman.id}<br>
-            ${pokeman.height}<br>
-            ${pokeman.type}<br>
+            Pokedex #${pokeman.id}<br>
+            Height: ${pokeman.height}<br>
+            Types: ${pokeman.type}<br>
         </p>
         </div>
         </div> 
@@ -83,14 +84,6 @@ const html=
 
 }
 
-//     // let http = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
-//     // fetch(http).then((res) => res.json())
-//     //     .then((json) => )
-//
-//
-//
-//
-// })
 
 
 

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magic</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">MTG Lister</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Logout</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" id="input" type="search" placeholder="Search" aria-label="Search">
+            <button id="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="d-flex justify-content-center">
+    <h1>Welcome to the Magic card lister</h1>
+</div>
+<div class="d-flex justify-content-center">
+    <h3>Make a profile, select any cards you want and add them to a deck!</h3>
+</div>
+<div class="container-fluid">
+    <div id="magic" class="row row-cols-6">
+    </div>
+</div>
+<div id="searchedCard">
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<script>
+
+    let promises = [];
+    const fetchMagicCards = () => {
+
+            let url = `https://api.magicthegathering.io/v1/cards`;
+            console.log(url)
+            fetch(url)
+                .then((response) => response.json())
+                .then((json) => {
+                    promises.push(json)
+                    // window.localStorage.setItem("promises", JSON.stringify(promises));
+                    for(let i = 0; i < promises[0].cards.length; i++) {
+                        // console.log(promises[0].cards[i].imageUrl)
+                        if (promises[0].cards[i].imageUrl == undefined){
+
+                        }else{
+                            $("#magic").append(`
+<div class="card-group ">
+  <div class="card " style="width: 8rem;">
+    <img src="${promises[0].cards[i].imageUrl}" style="width: 235px; height: 300px;" class="card-img-top" alt="...">
+    <div class="card-body d-flex justify-content-center">
+    <button type="button" id="btn${i}" class="btn btn-outline-primary">Add to Deck</button>
+    </div>
+    </div>
+    </div>
+       `)
+                            $("#btn" + i).on("click", e =>{
+                                e.preventDefault();
+                                console.log(promises[0].cards[i].name)
+                                let addedCard = promises[0].cards[i].name;
+                            })
+                        }
+                        }})};
+
+fetchMagicCards();
+    // if (JSON.parse(window.localStorage.getItem('promises')) !== null) {
+    //     promises = JSON.parse(window.localStorage.getItem('promises'));
+    //     console.log("from local")
+    //     console.log(promises)
+    // } else {
+    //     console.log("new Request")
+    //     fetchMagicCards();
+    //     console.log(promises)
+    // }
+
+let searchArray= [];
+    $("#search").on("click", e => {
+        e.preventDefault();
+        let cardName = $("#input").val();
+        for (let i = 0; i < promises[0].cards.length; i++){
+            if(promises[0].cards[i].name.includes(cardName)){
+                 searchArray = promises[0].cards[i].imageUrl;
+                // console.log(searchArray)
+                $("#magic").empty();
+                $("#searchedCard").append(`
+<div class="card-group ">
+  <div class="card " style="width: 8rem;">
+    <img src="${searchArray}" style="width: 235px; height: 300px;" class="card-img-top" alt="...">
+    <div class="card-body d-flex justify-content-center">
+    <button type="button" id="searchBtn${i}" class="btn btn-outline-primary">Add to Deck </button>
+    </div>
+    </div>
+    </div>
+       `)
+                $("#searchBtn" + i).on("click", e =>{
+                    e.preventDefault();
+                    console.log(promises[0].cards[i].name)
+                })
+
+            }
+        }
+    })
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
